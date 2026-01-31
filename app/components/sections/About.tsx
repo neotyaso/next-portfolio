@@ -128,7 +128,7 @@ const About = () => {
         <div className="space-y-12">
           <div className="space-y-4">
             <h4 className="text-xl font-bold text-gray-800 flex items-center gap-3">
-              <span className="w-8 h-[1px] bg-gray-300"></span>
+              <span className="w-8 h-1px bg-gray-300"></span>
               <TextReveal>Philosophy</TextReveal>
             </h4>
             <TextReveal className="text-gray-700 leading-loose" width="100%">
@@ -139,7 +139,7 @@ const About = () => {
 
           <div className="space-y-4">
             <h4 className="text-xl font-bold text-gray-800 flex items-center gap-3">
-              <span className="w-8 h-[1px] bg-gray-300"></span>
+              <span className="w-8 h-px bg-gray-300"></span>
               <TextReveal>Core Values</TextReveal>
             </h4>
             <TextReveal className="text-gray-700 leading-loose" width="100%">

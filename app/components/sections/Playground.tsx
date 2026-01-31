@@ -13,7 +13,7 @@ const checkMove = (currentBoard: (1 | 2 | null)[][], r: number, c: number, playe
   for (const [dr, dc] of directions) {
     let nr = r + dr;
     let nc = c + dc;
-    const temp = [];
+    const temp: {r: number, c: number}[] = [];
     while (nr >= 0 && nr < 8 && nc >= 0 && nc < 8 && currentBoard[nr][nc] === opponent) {
       temp.push({r: nr, c: nc});
       nr += dr;
@@ -29,7 +29,7 @@ const checkMove = (currentBoard: (1 | 2 | null)[][], r: number, c: number, playe
 const MizuOthello = () => {
   // 1: 黒, 2: 白, null: 空
   const [board, setBoard] = useState<(1 | 2 | null)[][]>(() => {
-    const b = Array(8).fill(null).map(() => Array(8).fill(null));
+    const b: (1 | 2 | null)[][] = Array(8).fill(null).map(() => Array(8).fill(null));
     b[3][3] = 2; b[3][4] = 1;
     b[4][3] = 1; b[4][4] = 2;
     return b;
@@ -191,8 +191,8 @@ const MizuOthello = () => {
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     className={`w-3/4 h-3/4 rounded-full shadow-lg ${
                       cell === 1 
-                        ? 'bg-gradient-to-br from-gray-800 to-black' 
-                        : 'bg-gradient-to-br from-white to-gray-200'
+                        ? 'bg-linear-to-br from-gray-800 to-black' 
+                        : 'bg-linear-to-br from-white to-gray-200'
                     }`}
                   />
                 )}

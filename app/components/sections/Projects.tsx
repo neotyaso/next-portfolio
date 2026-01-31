@@ -5,8 +5,18 @@ import { Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
 import { TextReveal, StaggeredText } from '../../ui/Animations';
 
+interface Project {
+  title: string;
+  tech: string[];
+  images: string[];
+  status: string;
+  description: string;
+  github: string;
+  demo: string;
+}
+
 // 3D Tilt Card Component
-const ProjectCard = ({ project, index }: { project: any, index: number }) => {
+const ProjectCard = ({ project, index }: { project: Project, index: number }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const mouseX = useSpring(x, { stiffness: 500, damping: 100 });
@@ -79,7 +89,7 @@ const ProjectCard = ({ project, index }: { project: any, index: number }) => {
               </button>
               
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                {project.images.map((_: any, i: number) => (
+                {project.images.map((_: string, i: number) => (
                   <div 
                     key={i}
                     className={`w-2 h-2 rounded-full transition-colors ${i === currentImageIndex ? 'bg-white' : 'bg-white/50'}`}
@@ -92,7 +102,7 @@ const ProjectCard = ({ project, index }: { project: any, index: number }) => {
       </motion.div>
       <div className="md:w-2/5 space-y-8 font-serif">
         <div className="flex items-center gap-4">
-          <span className="w-12 h-[1px] bg-gray-400"></span>
+          <span className="w-12 h-px bg-gray-400"></span>
           <TextReveal className="text-sm tracking-widest text-gray-500">{project.status}</TextReveal>
         </div>
         <TextReveal className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">{project.title}</TextReveal>

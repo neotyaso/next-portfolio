@@ -4,8 +4,14 @@ import React from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { TextReveal, StaggeredText, fadeInUp } from '../../ui/Animations';
 
+interface TimelineEvent {
+  date: string;
+  title: string;
+  description: string;
+}
+
 const Timeline = () => {
-  const events = [
+  const events: TimelineEvent[] = [
     {
       date: "2025年2月",
       title: "HTML/CSS学習開始",
@@ -96,7 +102,7 @@ const Timeline = () => {
 
         <div className="max-w-5xl mx-auto relative">
           {/* Line */}
-          <div className="absolute left-[9px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gray-100 transform md:-translate-x-1/2">
+          <div className="absolute left-2.25 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-100 transform md:-translate-x-1/2">
             <motion.div style={{ scaleY, originY: 0 }} className="w-full h-full bg-black" />
           </div>
 
@@ -108,7 +114,7 @@ const Timeline = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
-                className={`relative md:flex items-center justify-between md:min-h-[200px] ${
+                className={`relative md:flex items-center justify-between md:min-h-50 ${
                   i % 2 === 0 ? 'md:flex-row-reverse' : ''
                 }`}
               >

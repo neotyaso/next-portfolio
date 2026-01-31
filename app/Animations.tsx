@@ -11,7 +11,7 @@ export const fadeInUp = {
     y: 0,
     transition: { duration: 0.8, ease: "easeOut" }
   }
-};
+} as const;
 
 export const staggerContainer = {
   hidden: { opacity: 0 },
@@ -47,7 +47,7 @@ export const MouseStalker = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-8 h-8 border-2 border-black rounded-full pointer-events-none z-[100] hidden md:block mix-blend-difference bg-white/20 backdrop-blur-[1px]"
+      className="fixed top-0 left-0 w-8 h-8 border-2 border-black rounded-full pointer-events-none z-100 hidden md:block mix-blend-difference bg-white/20 backdrop-blur-[1px]"
       style={{
         x: useTransform(x, (latest) => latest - 16),
         y: useTransform(y, (latest) => latest - 16),
@@ -59,7 +59,7 @@ export const MouseStalker = () => {
 
 // ノイズオーバーレイコンポーネント
 export const NoiseOverlay = () => (
-  <div className="fixed inset-0 z-[90] pointer-events-none opacity-[0.04] mix-blend-overlay"
+  <div className="fixed inset-0 z-90 pointer-events-none opacity-[0.04] mix-blend-overlay"
     style={{
       backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
     }}
@@ -138,7 +138,7 @@ export const AnimatedText = ({ text }: { text: string }) => (
 // ローディング画面コンポーネント
 export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => (
   <motion.div
-    className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center"
+    className="fixed inset-0 z-100 bg-black flex flex-col items-center justify-center"
     initial={{ y: 0 }}
     exit={{ y: "-100%", transition: { duration: 1, ease: [0.76, 0, 0.24, 1] } }}
   >

@@ -78,7 +78,7 @@ const Contact = () => {
           <motion.div variants={fadeInUp} className="space-y-12 font-serif">
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-gray-800 flex items-center gap-3">
-                <span className="w-8 h-[1px] bg-gray-300"></span>
+                <span className="w-8 h-px bg-gray-300"></span>
                 <TextReveal>Socials</TextReveal>
               </h3>
               <div className="flex flex-col gap-6 pt-2">
@@ -99,7 +99,7 @@ const Contact = () => {
             
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-gray-800 flex items-center gap-3">
-                <span className="w-8 h-[1px] bg-gray-300"></span>
+                <span className="w-8 h-px bg-gray-300"></span>
                 <TextReveal>Message</TextReveal>
               </h3>
               <TextReveal className="text-gray-600 leading-loose" width="100%">
