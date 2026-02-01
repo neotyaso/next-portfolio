@@ -143,7 +143,7 @@ const Projects = () => {
       status: "完成",
       description: "Next.jsとTailwind CSSを用いて構築した、個人のポートフォリオサイトです。以前制作したポートフォリオはアニメーションだったりがなく静的でしたが、今回は和の美意識とモダンなWebデザインの融合を目指し、動的なWebサイトにすることを目標として余白とタイポグラフィにこだわりました。",
       github: "https://github.com/neotyaso",
-      demo: "#"
+      demo: "https://github.com/neotyaso/next-portfolio"
     },
     { 
       title: "鏡花水月城（フルスタック）", 
