@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { staggerContainer, StaggeredText, AnimatedText, TextReveal } from '../../ui/Animations';
+import { staggerContainer, StaggeredText, AnimatedText, TextReveal, RippleBackground } from '../../ui/Animations';
 
 const About = () => {
   const ref = React.useRef(null);
@@ -18,6 +18,7 @@ const About = () => {
       backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 0 12h1.838a4.14 4.14 0 0 1 8.324 0H12zM2.162 0a4.14 4.14 0 0 1 8.324 0H12.325a5.982 5.982 0 0 0-10.65 0H2.162z' fill='%239ca3af' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")`
     }}
   >
+    <RippleBackground color="border-stone-300/40" />
     <div className="max-w-6xl mx-auto px-6 relative z-10">
       <motion.div 
         initial="hidden"

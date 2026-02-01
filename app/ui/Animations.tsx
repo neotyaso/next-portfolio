@@ -173,3 +173,29 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => (
     </motion.p>
   </motion.div>
 );
+
+// 背景用の波紋エフェクトコンポーネント
+export const RippleBackground = ({ color = "border-gray-400/20" }: { color?: string }) => {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0">
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={i}
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border ${color}`}
+          style={{ width: '60vmax', height: '60vmax' }}
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{
+            scale: 2.5,
+            opacity: [0, 0.3, 0],
+          }}
+          transition={{
+            duration: 18 + ((i * 7) % 13),
+            repeat: Infinity,
+            delay: i * 3.5,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+};

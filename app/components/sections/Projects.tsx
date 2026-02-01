@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
-import { TextReveal, StaggeredText } from '../../ui/Animations';
+import { TextReveal, StaggeredText, RippleBackground } from '../../ui/Animations';
 
 interface Project {
   title: string;
@@ -169,6 +169,7 @@ const Projects = () => {
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 0 12h1.838a4.14 4.14 0 0 1 8.324 0H12zM2.162 0a4.14 4.14 0 0 1 8.324 0H12.325a5.982 5.982 0 0 0-10.65 0H2.162z' fill='%239ca3af' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")`
       }}
     >
+      <RippleBackground color="border-indigo-200/40" />
       {/* 透かし文字 */}
       <div className="relative py-32 md:py-64 flex justify-center items-center">
         <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20 pointer-events-none select-none whitespace-nowrap">

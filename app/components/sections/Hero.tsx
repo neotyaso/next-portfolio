@@ -3,6 +3,7 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { RippleBackground } from '../../ui/Animations';
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -12,6 +13,7 @@ const Hero = () => {
 
   return (
     <div id="Home" className="min-h-screen flex items-center justify-center bg-white relative overflow-hidden perspective-1000">
+      <RippleBackground color="border-blue-200/40" />
       {/* 背景装飾 */}
       <motion.div 
         style={{ y: y1, rotate: 10 }}
