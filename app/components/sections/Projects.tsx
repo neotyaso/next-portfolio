@@ -57,7 +57,7 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true }}
-        className="md:w-3/5 group relative perspective-1000"
+        className="w-full md:w-3/5 group relative perspective-1000"
       >
         <div className="relative overflow-hidden rounded-sm shadow-2xl border-4 border-white transform transition-all duration-500 group-hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] aspect-video bg-gray-100">
           <AnimatePresence mode="wait">
@@ -100,7 +100,7 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
           )}
         </div>
       </motion.div>
-      <div className="md:w-2/5 space-y-8 font-serif">
+      <div className="w-full md:w-2/5 space-y-8 font-serif">
         <div className="flex items-center gap-4">
           <span className="w-12 h-px bg-gray-400"></span>
           <TextReveal className="text-sm tracking-widest text-gray-500">{project.status}</TextReveal>
