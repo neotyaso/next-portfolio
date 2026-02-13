@@ -25,43 +25,53 @@ const Timeline = () => {
     {
       date: "2025年4月",
       title: "JavaScript学習開始",
-      description: "静的から動的なWebサイト制作のためJavaScriptを本格的に学習。",
+      description: "静的から動的なWebサイト制作のためJavaScriptを学習開始。",
     },
     {
       date: "2025年6月",
       title: "React/TypeScript学習開始",
-      description: "モダンフロントエンド開発のためReactとTypeScriptの学習を開始。特にReactの学習に集中していました。",
+      description: "モダンフロントエンド開発のためReactとTypeScriptの学習を開始。特にReactの学習に集中。",
     },
     {
       date: "2025年7月",
       title: "初作品完成",
-      description: "鏡花水月城をReactで制作・公開しました。初めてのフロントのみの作品として公開した。",
+      description: "鏡花水月城をReactで制作・公開。初めてのフロントのみの作品として公開。",
     },
     {
       date: "2025年8月",
       title: "Laravel・PHPを学習開始",
-      description: "将来を見据えてフルスタック開発のためLaravel（PHP）の学習を計画",
+      description: "将来を見据えてフルスタック開発のためLaravel（PHP）の学習を計画。",
     },
     {
       date: "2025年8月",
       title: "フルスタック作品完成",
-      description: "鏡花水月城をReact + Laravelで制作をしたがデプロイが出来なかったため今後に期待する。",
+      description: "鏡花水月城をReact + Laravelで制作。デプロイが出来なかったため挫折を味わう。",
     },
     {
       date: "2025年10月",
       title: "Pythonの学習を開始",
-      description: "論文を見て株価の予想アプリケーションを構築するために開始した。"
+      description: "機械学習に興味が出て学習を開始。"
     },
     {
       date: "2025年10月",
       title: "Chromeの拡張機能を開発",
-      description: "バイトを探していた時に求人サイトが使いずらいと思い条件に合う求人のみを絞って、色をつけて見分けることを可能に。"
+      description: "アルバイトを探していた時に求人サイトが使いずらいと思い条件に合う求人のみを絞って、色をつけて見分けることを可能に。"
     },
     {
       date: "2026年1月",
       title: "新しいポートフォリオを制作する",
-      description: "元々作成したポートフォリオがフロントエンドのみで静的なサイトだったため今回Next.jsを使用してフルスタックのポートフォリオサイトを作成した。"
-    }
+      description: "元々作成したポートフォリオがフロントエンドのみで静的なサイトだったため今回Next.jsを使用してフルスタックのポートフォリオサイトを作成。"
+    },
+    {
+      date: "2026年2月",
+      title: "AIのAPIを学習",
+      description: "面白いことそして便利なことを探し、AIのAPIを学習。"
+    },
+    {
+      date: "2026年X月",
+      title: "React Nativeの学習を開始",
+      description: "未来"
+    },
   ];
 
   const ref = React.useRef(null);

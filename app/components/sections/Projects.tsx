@@ -116,10 +116,13 @@ const ProjectCard = ({ project, index }: { project: Project, index: number }) =>
             <Github className="w-5 h-5" />
             <span className="text-sm tracking-widest border-b border-gray-900 group-hover/link:border-gray-500 transition-colors pb-0.5">GITHUB</span>
           </a>
-          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-900 hover:text-gray-500 transition-colors group/link">
-            <ExternalLink className="w-5 h-5" />
-            <span className="text-sm tracking-widest border-b border-gray-900 group-hover/link:border-gray-500 transition-colors pb-0.5">LIVE DEMO</span>
-          </a>
+          {/* demoが "#" ではない時だけ表示する */}
+          {project.demo !== "#" && (
+            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-900 hover:text-gray-500 transition-colors group/link">
+              <ExternalLink className="w-5 h-5" />
+              <span className="text-sm tracking-widest border-b border-gray-900 group-hover/link:border-gray-500 transition-colors pb-0.5">LIVE DEMO</span>
+            </a>
+          )}
         </div>
 
         <div className="flex flex-wrap gap-3 pt-4">
@@ -138,10 +141,10 @@ const Projects = () => {
   const projects = [
     { 
       title: "ポートフォリオサイト", 
-      tech: ["React", "TypeScript", "Tailwind CSS"], 
+      tech: ["Next.js", "TypeScript", "Tailwind CSS"], 
       images: ["/images/newportfolio.png", "/images/nekoportfolio.png"],
       status: "完成",
-      description: "Next.jsとTailwind CSSを用いて構築した、個人のポートフォリオサイトです。以前制作したポートフォリオはアニメーションだったりがなく静的でしたが、今回は和の美意識とモダンなWebデザインの融合を目指し、動的なWebサイトにすることを目標として余白とタイポグラフィにこだわりました。",
+      description: "Next.jsとTailwind CSSを用いて構築した、個人のポートフォリオサイトです。以前制作したポートフォリオサイトはアニメーションがなく静的でしたが、今回は和の美意識とモダンなWebデザインの融合を目指しました。動的なWebサイトにすることを目標として余白とタイポグラフィにこだわりました。",
       github: "https://github.com/neotyaso",
       demo: "https://github.com/neotyaso/next-portfolio"
     },
@@ -150,8 +153,17 @@ const Projects = () => {
       tech: ["Laravel", "React", "Inertia.js", "Tailwind CSS"], 
       images: ["/images/sirokansei.png", "/images/juno-202508011149.jpg"],
       status: "完成",
-      description: "LaravelとReactを組み合わせたフルスタックWebアプリケーション。Inertia.jsを採用し、SPAのような快適な操作性と、堅牢なバックエンドを両立させました。今回初めてフロントとバックエンドの両方を実装することにしたので使えるものは使っていこうという思いがいっぱいです。",
+      description: "LaravelとReactを組み合わせたフルスタックWebアプリケーション。Inertia.jsを採用し、SPAのような快適な操作性と、堅牢なバックエンドを両立させました。今回初めてフロントエンドとバックエンドの両方を実装することになったので、使えるものは",
       github: "https://github.com/neotyaso/kyokasui-castle",
+      demo: "#"
+    },
+    { 
+      title: "notion-ai-app", 
+      tech: ["Next.js", "TypeScript", "Groq AI", "Notion API", "Chrome Extension"], 
+      images: ["/images/step1.png", "/images/step2-1.png", "/images/step2-2.png"],
+      status: "完成",
+      description: "普段から、ネットで「これだ！」という情報を見つけるたびに、GoogleドキュメントやNotionに手作業でまとめていました。ですが、コピペしてタイトルを整えて、タグを付けて……という作業が、正直めちゃくちゃ面倒だったので今回作成しました。ブラウザ上のテキストを右クリック一つでAI要約し、Notionデータベースへ自動保存するフルスタックツール。Llama 3.3（Groq）を活用した高度なタグ付け・タイトル生成機能に加え、カスタムヘッダーによる独自トークン認証を実装。利便性とセキュリティを両立させた実用的な構成にこだわりました。",
+      github: "https://github.com/neotyaso/notion-ai-app",
       demo: "#"
     },
   ];
